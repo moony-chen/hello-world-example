@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        tool(name: 'jdk8', type: 'jdk')
-        withMaven(maven: 'M3') {
+        withMaven(maven: 'M3', jdk: 'jdk8') {
           sh 'mvn clean install'
         }
 
